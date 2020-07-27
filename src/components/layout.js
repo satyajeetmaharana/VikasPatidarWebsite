@@ -1,16 +1,27 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
-import React from "react"
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import { useMediaQuery } from 'react-responsive'
 
-import Header from "./header"
-import "./layout.css"
+import Particles from 'react-particles-js'
+
+import Image from "../components/image"
+import { Link } from "gatsby"
+
+import About from "../components/about"
+import Education from "../components/education"
+import Experience from "../components/experience"
+import Projects from "../components/projects"
+import Skills from "../components/skills"
+
+import ScrollAnimation from 'react-animate-on-scroll';
+
+
+import Fade from 'react-reveal/Fade';
+
+import { AnimatedBg, Transition } from 'scroll-background';
+
+import "animate.css/animate.min.css";
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -22,23 +33,213 @@ const Layout = ({ children }) => {
       }
     }
   `)
+  if (typeof window !== "undefined") {
+    // eslint-disable-next-line global-require
+    require("smooth-scroll")('a[href*="#"]')
+  }
+
+  const [isNavVisible, setNavVisibility] = useState(false);
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 1024px)");
+    mediaQuery.addListener(handleMediaQueryChange);
+    handleMediaQueryChange(mediaQuery);
+
+    return () => {
+      mediaQuery.removeListener(handleMediaQueryChange);
+    };
+  }, []);
+
+  const handleMediaQueryChange = mediaQuery => {
+    if (mediaQuery.matches) {
+      setIsSmallScreen(true);
+    } else {
+      setIsSmallScreen(false);
+    }
+  };
+
+  const toggleNav = () => {
+    setNavVisibility(!isNavVisible);
+  };
+
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
+    
+      {/*<div style={{position:'fixed',zIndex:'1',top:'50%',left:'50%',textAlign:'center'}}>
+          <div>
+                <div  style={{fontSize:'1.5em',color:'white',fontWeight:'500',textShadow: '2px 2px 4px #000000'}}>Vikas Patidar</div>
+                <div style={{fontSize:'1em',color:'white',fontWeight:'500',textShadow: '2px 2px 4px #000000'}}>Software Engineer | New York City</div>
+          </div>
+      </div>*/}
+      {/*<div style={{zIndex:'1', position:'relative'}}>
+        <AnimatedBg>
+          <div style={{ height: '900px'}}>
+            <About/>
+          </div>
+          <Transition height="10em" from="#541cfc" to="#FFA000" />
+          <div style={{ height: '900px' }}>
+            <Education/>
+          </div>
+          <Transition height="10em" from="#FFA000" to="#388E3C"/>
+          <div style={{ height: '900px' }}>
+            <Experience/>
+          </div>
+          <Transition height="10em" from="#388E3C" to="#FFA000"/>
+          <div style={{ height: '900px' }}>
+            <Projects/>
+          </div>
+          <Transition height="10em" from="#FFA000" to="#388E3C"/>
+          <div style={{ height: '900px' }}>
+            <Skills/>
+          </div>
+        </AnimatedBg>
+  </div> */}
+      <div style={{zIndex:'1', position:'relative'}}>
+           <div>
+                <div style={{textAlign:'center',color:'white',display:'relative',marginTop:'30em',height:'100%',zIndex:'400'}}>    
+                    <Fade delay={500} duration={1000} left cascade>
+                      <div  style={{fontSize:'4em',color:'white',fontWeight:'500',textShadow: '2px 2px 4px #000000'}}>Vikas Patidar</div>
+                    </Fade>
+                    <div>
+                      <div style={{fontSize:'1.5em',color:'white',fontWeight:'500',textShadow: '2px 2px 4px #000000'}}>Software Engineer | New York City</div>
+                    </div>
+                </div>
+          </div>
+          <div>
+            <About/>
+          </div>
+          <div>
+            <Education/>
+          </div>
+          <div>
+            <Experience/>
+          </div>
+          <div>
+            <Projects/>
+          </div>
+          <div>
+            <Skills/>
+          </div>
+      </div>   
+      {/*#3c2f4f */}
+      <div style={{position:'fixed',width:'100%',height:'100%',top:'0',bottom:'0',left:'0',right:'0',backgroundImage:'linear-gradient(#0f3b27,#2eb87a)',filter: 'blur(1px)',zIndex:'-9'}}> 
+      <Particles
+                params={{
+                    "particles": {
+                        "number": {
+                            "value": 50
+                        },
+                        "size": {
+                            "value": 3
+                        }
+                    },
+                    "interactivity": {
+                        "events": {
+                            "onhover": {
+                                "enable": true,
+                                "mode": "repulse"
+                            }
+                        }
+                    },
+                    "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#FFFFFF"
+                    },
+                    "polygon": {
+                        "nb_sides": 5
+                    },
+                    "image": {
+                        "src": "img/github.svg",
+                        "width": 100,
+                        "height": 100
+                    }
+                    },
+                    "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#ffffff",
+                    "opacity": 0.4,
+                    "width": 1
+                    },
+                }} />
+      </div>
+
+      {/*
+      <CSSTransition
+        in={!isSmallScreen || isNavVisible}
+        timeout={0}
+        classNames="NavAnimation"
+        unmountOnExit
+      >
+        <div>
+          <div style={{position: 'absolute',top:'50%',left:'50%',transform: 'translate(-50%, -50%)',textAlign: 'center'}}>
+              <div style={{fontSize:'4em',color:'white',fontWeight:'500',textShadow: '2px 2px 4px #000000'}}>Hi, I'm Satyajeet.</div>
+              <div style={{fontSize:'1em',color:'white',fontWeight:'500',textShadow: '2px 2px 4px #000000'}}>Software Engineer | New York City</div>
+              <div>
+               
+                </div>
+            </div>
+          <div className="bounce" style={{position:'absolute',top:'90%',left:'50%',transform:'translate(-50%,-50%)', textAlign:'center'}}>
+
+          </div>
+        </div>
+      </CSSTransition>
+
+      <CSSTransition
+        in={isSmallScreen || isNavVisible}
+        timeout={0}
+        classNames="NavAnimation"
+        unmountOnExit
+      >
+        <div>
+          <div style={{position:'absolute',paddingBottom:'50%',left:'50%',transform:'translate(-50%,-50%)', textAlign:'center'}}>
+              <div  style={{fontSize:'1.5em',color:'white',fontWeight:'500',textShadow: '2px 2px 4px #000000'}}>Hi, I'm Satyajeet.</div>
+              <div style={{fontSize:'1em',color:'white',fontWeight:'500',textShadow: '2px 2px 4px #000000'}}>Software Engineer | New York City</div>
+              {/*<IconContext.Provider value={{size:'2em',className:'contact-icons-top'}}>
+                  <div>
+                    <a href="https://www.linkedin.com/in/satyajeetmaharana/" target="_blank" rel="noopener noreferrer"><FaLinkedin/></a>&nbsp;&nbsp;
+                    <a href="https://github.com/satyajeetmaharana" target="_blank" rel="noopener noreferrer"><FaGithubSquare/></a>&nbsp;&nbsp;
+                    <a href="mailto:satyajeet@nyu.edu" target="_blank" rel="noopener noreferrer"><FaEnvelope/></a>
+                  </div>
+                </IconContext.Provider>
+          </div>
+        </div>
+              </CSSTransition>*/}
+      {/*
+      <Tablet>
+        <div>
+          <Navbar/>
+        </div>
+        <div style={{position:'absolute',top:'20%',left:'50%',transform:'translate(-50%,-50%)', textAlign:'center'}}>
+            <div  style={{fontSize:'3em',color:'white',fontWeight:'500',textShadow: '2px 2px 4px #000000'}}>Hi, I'm Satyajeet.</div>
+            <div style={{fontSize:'1em',color:'white',fontWeight:'500',textShadow: '2px 2px 4px #000000'}}>Software Engineer | New York City</div>
+          <IconContext.Provider value={{size:'2em',className:'contact-icons-top'}}>
+            <div>
+              <a href="https://www.linkedin.com/in/satyajeetmaharana/" target="_blank" rel="noopener noreferrer"><FaLinkedin/></a>&nbsp;&nbsp;
+              <a href="https://github.com/satyajeetmaharana" target="_blank" rel="noopener noreferrer"><FaGithubSquare/></a>&nbsp;&nbsp;
+              <a href="mailto:satyajeet@nyu.edu" target="_blank" rel="noopener noreferrer"><FaEnvelope/></a>
+            </div>
+          </IconContext.Provider>
+        </div>
+      </Tablet>*/}
+      
       <div
         style={{
           margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
+          position:'relative',
+          //maxWidth: 1100,
+          //padding: `5rem`,
+          width:'100%',
+          //border:'1px solid gray',
+          //boxShadow: '1px 1px 8px gray',
+          backgroundColor:'white'
         }}
       >
         <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
       </div>
     </>
   )
