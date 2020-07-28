@@ -102,9 +102,9 @@ const Layout = ({ children }) => {
                     <Fade delay={500} duration={1000} left cascade>
                       <div  style={{fontSize:'4em',color:'white',fontWeight:'500',textShadow: '2px 2px 4px #000000'}}>Vikas Patidar</div>
                     </Fade>
-                    <div>
+                    {/*<div>
                       <div style={{fontSize:'1.5em',color:'white',fontWeight:'500',textShadow: '2px 2px 4px #000000'}}>Software Engineer | New York City</div>
-                    </div>
+                    </div>*/}
                 </div>
           </div>
           <div>
