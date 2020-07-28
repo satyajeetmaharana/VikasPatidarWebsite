@@ -34,7 +34,7 @@ const Education = () => (
                 </div> 
                 <br/>
                 <div style={{textAlign: 'center'}}>
-                  <p><b>Relevant Coursework:</b>&nbsp;rogramming Languages, Operating Systems, Natural Language Processing, Computer Vision, Deep Learning</p>
+                  <p><b>Relevant Coursework:</b>Programming Languages, Operating Systems, Natural Language Processing, Computer Vision, Deep Learning</p>
                   <p style={{textAlign:'center',fontSize:'110%'}}><b>GPA:</b>&nbsp;4.0/4.0</p>
                 </div>
               </div>
