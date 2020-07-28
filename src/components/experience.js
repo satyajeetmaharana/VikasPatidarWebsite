@@ -45,13 +45,13 @@ const Experience = () => (
               </div>
               <div>
                 <div style={{textAlign:'center'}}>
-                  <b>Software Engineer Intern</b>
+                  <b>Software Development Intern</b>
                   <div>June 2020 – Aug 2020</div>
                 </div> 
                 <p style={{textAlign: 'justify',paddingLeft:'20%',paddingRight:'20%'}}>
                   <ul>
                     <li>Analyzed the US job market status using conversational BERT in active learning framework trained on a dataset containing 200M tweets.</li>
-                    <li>Studied the employment patterns based on demographic featureslike age and gender using demographics package on user profiles.</li>
+                    <li>Studied the employment patterns based on demographic features like age and gender using demographics package on user profiles.</li>
                     <li>Reduced the model inference time by 10 timesusing Open Neural Network Exchange (ONXX).</li>
                     <li>Extracted the relevant information (company, position, city, start date, skills) from a dataset of 15 Billion tweets. Inferred the skillset for each sector and generated a time series of job offer counts based on sector and company.</li>
                   </ul>
@@ -75,7 +75,7 @@ const Experience = () => (
               </div>
               <div>
                 <div style={{textAlign:'center'}}>
-                  <b>Product Engineer Intern</b>
+                  <b>Software Development Intern</b>
                   <div>June 2019 – Aug 2019</div>
                 </div> 
                 <p style={{textAlign: 'justify',paddingLeft:'20%',paddingRight:'20%'}}>

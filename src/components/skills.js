@@ -154,7 +154,7 @@ const Skills = () => (
               <h1>Technical Skills</h1>
             </Fade>
             <div>
-            <div style={{display:'flex',paddingLeft:'20%',paddingRight:'20%',textAlign:'center'}} >
+            <div style={{display:'flex',paddingLeft:'10%',paddingRight:'10%',textAlign:'center'}} >
               <div style={{flex:'1'}}>
                 <br/>
                 <div style={{display:'flex',textAlign:'center',flexDirection:'column'}}>

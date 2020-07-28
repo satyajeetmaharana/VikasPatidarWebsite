@@ -28,8 +28,8 @@ const Projects = () => (
                 </div> 
               <p style={{textAlign: 'justify',paddingLeft:'20%',paddingRight:'20%'}}>
                 <ul>
-                <li>Automated the extraction of the five parameters ofContextual Integrityfrom large privacy policies.</li>
-                <li>Pioneered the task with anovel approachusing syntactic Dependency Parsing and type-specific SRL along with domain-specific rules.</li>
+                <li>Automated the extraction of the five parameters ofC ontextual Integrity from large privacy policies.</li>
+                <li>Pioneered the task with a novel approach using syntactic Dependency Parsing and type-specific SRL along with domain-specific rules.</li>
                 <li>Achieved a 10% improvement in F1-score over the current best models on 36 real-world privacy policies of major enterprises.</li>
                 <li>Technologies: Python, PyTorch, AllenNLP, Gensim, NLTK, spaCy, Flask, SQLite</li>
                 </ul>
@@ -83,7 +83,7 @@ const Projects = () => (
                   <div>Jan 2016 - May 2016</div>
                 </div> 
               <p style={{textAlign: 'justify',paddingLeft:'20%',paddingRight:'20%'}}>
-                <li>Implemented anonline distributed algorithmfor generating summaries of related tweets cluster created using k-means algorithm.</li>
+                <li>Implemented an online distributed algorithm for generating summaries of related tweets cluster created using k-means algorithm.</li>
                 <li>Outperformed existing algorithms in speed by 8 times and accuracy by 10.8%.</li>
                 <li>Technologies: Python, scikit-learn, Tweepy, Flask, MongoDB</li>
               </p>
