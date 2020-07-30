@@ -124,7 +124,7 @@ const Layout = ({ children }) => {
           </div>
       </div>   
       {/*#3c2f4f */}
-      <div style={{position:'fixed',width:'100%',height:'100%',top:'0',bottom:'0',left:'0',right:'0',backgroundImage:'linear-gradient(#0f3b27,#2eb87a)',filter: 'blur(1px)',zIndex:'-9'}}> 
+      <div style={{position:'fixed',width:'100%',height:'100%',top:'0',bottom:'0',left:'0',right:'0',backgroundImage:'linear-gradient(#34a379,#34a379 )',zIndex:'-9'}}> 
       <Particles
                 params={{
                     "particles": {
