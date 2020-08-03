@@ -21,6 +21,12 @@ import Fade from 'react-reveal/Fade';
 
 import { AnimatedBg, Transition } from 'scroll-background';
 
+import {FaLinkedin,FaGithubSquare,FaEnvelope } from 'react-icons/fa';
+import { IconContext } from "react-icons";
+
+import styled, { css } from 'styled-components'
+import "../utils/layout.css"
+
 import "animate.css/animate.min.css";
 
 const Layout = ({ children }) => {
@@ -64,47 +70,34 @@ const Layout = ({ children }) => {
   };
 
 
+  const IconsDiv = styled.div`
+    a{
+      color:black;
+    }
+    a:hover{
+      color: #DAA520;
+    }
+  `
+
   return (
     <>
-    
-      {/*<div style={{position:'fixed',zIndex:'1',top:'50%',left:'50%',textAlign:'center'}}>
-          <div>
-                <div  style={{fontSize:'1.5em',color:'white',fontWeight:'500',textShadow: '2px 2px 4px #000000'}}>Vikas Patidar</div>
-                <div style={{fontSize:'1em',color:'white',fontWeight:'500',textShadow: '2px 2px 4px #000000'}}>Software Engineer | New York City</div>
-          </div>
-      </div>*/}
-      {/*<div style={{zIndex:'1', position:'relative'}}>
-        <AnimatedBg>
-          <div style={{ height: '900px'}}>
-            <About/>
-          </div>
-          <Transition height="10em" from="#541cfc" to="#FFA000" />
-          <div style={{ height: '900px' }}>
-            <Education/>
-          </div>
-          <Transition height="10em" from="#FFA000" to="#388E3C"/>
-          <div style={{ height: '900px' }}>
-            <Experience/>
-          </div>
-          <Transition height="10em" from="#388E3C" to="#FFA000"/>
-          <div style={{ height: '900px' }}>
-            <Projects/>
-          </div>
-          <Transition height="10em" from="#FFA000" to="#388E3C"/>
-          <div style={{ height: '900px' }}>
-            <Skills/>
-          </div>
-        </AnimatedBg>
-  </div> */}
-      <div style={{zIndex:'1', position:'relative'}}>
+      <div style={{position:'relative'}}>
            <div>
-                <div style={{textAlign:'center',color:'white',display:'relative',marginTop:'30em',height:'100%',zIndex:'400'}}>    
+                <div style={{textAlign:'center',display:'relative',top:'0',paddingTop:'30em',height:'100%',paddingBottom:'40em'}}>    
                     <Fade delay={500} duration={1000} left cascade>
-                      <div  style={{fontSize:'4em',color:'white',fontWeight:'500',textShadow: '2px 2px 4px #000000'}}>Vikas Patidar</div>
+                      <div  style={{fontSize:'4em',fontWeight:'500',textShadow: '2px 2px 4px #000000'}}>Vikas Patidar</div>
                     </Fade>
-                    {/*<div>
-                      <div style={{fontSize:'1.5em',color:'white',fontWeight:'500',textShadow: '2px 2px 4px #000000'}}>Software Engineer | New York City</div>
-                    </div>*/}
+                    
+                    <IconContext.Provider value={{size:'2em'}} >
+                      <Fade right big cascade >
+                        <IconsDiv>
+                          <a href="https://linkedin.com/in/vikas-patidar" target="_blank" rel="noopener noreferrer"><FaLinkedin className="hello"/></a>&nbsp;&nbsp;
+                          <a href="https://github.com/Full-Stack-Typhoon" target="_blank" rel="noopener noreferrer"><FaGithubSquare/></a>&nbsp;&nbsp;
+                          <a href="mailto:vikaspatidar859@gmail.com" target="_blank" rel="noopener noreferrer"><FaEnvelope/></a>
+                        </IconsDiv>
+                      </Fade>
+                    </IconContext.Provider>
+                  
                 </div>
           </div>
           <div>
@@ -123,51 +116,6 @@ const Layout = ({ children }) => {
             <Skills/>
           </div>
       </div>   
-      {/*#3c2f4f */}
-      <div style={{position:'fixed',width:'100%',height:'100%',top:'0',bottom:'0',left:'0',right:'0',backgroundImage:'linear-gradient(#34a379,#34a379 )',zIndex:'-9'}}> 
-      <Particles
-                params={{
-                    "particles": {
-                        "number": {
-                            "value": 50
-                        },
-                        "size": {
-                            "value": 3
-                        }
-                    },
-                    "interactivity": {
-                        "events": {
-                            "onhover": {
-                                "enable": true,
-                                "mode": "repulse"
-                            }
-                        }
-                    },
-                    "shape": {
-                    "type": "circle",
-                    "stroke": {
-                        "width": 0,
-                        "color": "#FFFFFF"
-                    },
-                    "polygon": {
-                        "nb_sides": 5
-                    },
-                    "image": {
-                        "src": "img/github.svg",
-                        "width": 100,
-                        "height": 100
-                    }
-                    },
-                    "line_linked": {
-                    "enable": true,
-                    "distance": 150,
-                    "color": "#ffffff",
-                    "opacity": 0.4,
-                    "width": 1
-                    },
-                }} />
-      </div>
-
       {/*
       <CSSTransition
         in={!isSmallScreen || isNavVisible}

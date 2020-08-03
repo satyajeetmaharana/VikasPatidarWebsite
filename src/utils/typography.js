@@ -1,32 +1,6 @@
-import Typography from "typography"
+import Typography from 'typography'
+import githubTheme from 'typography-theme-github'
 
-const typography = new Typography({
-  baseFontSize: "18px",
-  baseLineHeight: 1.666,
-  headerFontFamily: [
-    "Montserrat"
-  ],
-  bodyFontFamily: ["Montserrat",],
-  googleFonts: [
-    {
-      name: 'Montserrat',
-      styles: [
-        '700',
-        '400',
-        '400i',
-        '700i'
-      ],
-    },
-    {
-      name: 'Merriweather',
-      styles: [
-        '400',
-        '400i',
-        '700',
-        '700i',
-      ],
-    },
-  ],
-})
+const typography = new Typography(githubTheme)
 
-export default typography;
+export default typography

@@ -1,12 +1,11 @@
 import React from "react"
-import { Link } from "gatsby"
 
 
 //import Particles from 'react-particles-js'
 
-import Fade from 'react-reveal/Fade';
-import Reveal from 'react-reveal/Reveal';
-import Typist from 'react-typist';
+// import Fade from 'react-reveal/Fade';
+// import Reveal from 'react-reveal/Reveal';
+// import Typist from 'react-typist';
 
 import 'animate.css/animate.css'
 
@@ -38,30 +37,109 @@ import DockerLogo from "../images/docker.png";
 import RabbitMQLogo from "../images/rabbitMQ.png";
 import OpenStackLogo from "../images/openStack.svg";
 import AWSLogo from "../images/aws.png";
-import RedisLogo from "../images/redis.png";
+import RedisLogo from "../images/redis.svg";
 import NginxLogo from "../images/nginx.png";
 
 
 
+// import { Flex, Box } from '@rebass/grid'
+import styled, { css } from 'styled-components'
+
+import { media } from '../utils/style'
 
 
+const Section = styled.div`
+  text-align: center;
+  padding-top: 45px;
+  padding-bottom: 40px;
 
+  a {
+    font-family: 'Lato';
+  }
 
+  p {
+    margin-bottom: 64px;
+    font-size: large;
+    color: #666;
+  }
 
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Raleway';
+    text-transform: uppercase;
+    color: #292929;
+  }
 
-import HiveLogo from "../images/hive.png";
-import MongoDBLogo from "../images/mogodb.png";
+  h4 {
+    letter-spacing: 3px;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32px;
+    color: #292929;
+  }
 
-import SkLearnLogo from "../images/sklearn.png";
+  span {
+    color: #666;
+    opacity: 0.5;
+    display: block;
+  }
 
+  & > div:last-child {
+    border-bottom: none !important;
+  }
 
-import HadoopLogo from "../images/hadoop.png";
+  ${props =>
+    props.center &&
+    css`
+      text-align: left;
+      & > * {
+        margin-left: 30vw;
+      }
+      h4 {
+        margin-left: 20vw;
+      }
 
+      ${media.xs`
+        & > div {
+          margin-left: 3vw !important;
+        }
+    `}
+    `}
 
-import JenkinsLogo from "../images/jenkins.png";
-import GitLogo from "../images/git.png";
-import BambooLogo from "../images/bamboo.png";
-
+  ${props =>
+    props.dark &&
+    css`
+      background: #292929;
+      * {
+        color: #eee;
+      }
+      span {
+        text-align: left;
+        font-size: 16px;
+        line-height: 28px;
+        font-weight: 400;
+        opacity: 0.5;
+      }
+      span,
+      p {
+        color: #fefefe !important;
+      }
+      h6 {
+        color: #fff;
+        font-weight: 700;
+      }
+      h4 {
+        color: #fff;
+      }
+      div {
+        border-bottom: 1px solid #333 !important;
+      }
+    `}
+`
 
 const skillsData = [
   {
@@ -149,7 +227,8 @@ const skillsData = [
 
 const Skills = () => (
   <div >
-        <div style={{textAlign:'center',color:'white',display:'relative',height:'100%',padding:'5em'}} id="Skills">    
+        {/*
+        <div style={{textAlign:'center',display:'relative',height:'100%',padding:'5em'}} id="Skills">    
             <Fade delay={500} duration={1000} left cascade>
               <h1>Technical Skills</h1>
             </Fade>
@@ -185,7 +264,35 @@ const Skills = () => (
               </div>
             </div>
           </div>
-        </div>
+        </div>*/}
+
+        <a id="skills"></a>
+        <Section center>
+          <h4>Skills</h4>
+          {skillsData.map(skill => (
+              <div style={{flex:'1'}}>
+                <div style={{display:'flex',flexDirection:'column'}}>
+                  <div style={{flex:'1'}}>
+                    <h6>{skill.title}</h6>
+                  </div>
+                  <br/>
+                  <div style={{flex:'1',verticalAlign:'middle'}}>
+                    <div style={{display:'flex',flexWrap:'wrap',width:'60%'}}>
+                      {skill.items.map(tile => (
+                        <div style={{flex:'1',display:'flex',flexDirection:'column'}}>
+                          <div style={{flex: '1 0 auto',textAlign:'center'}}>
+                            <img src={tile.img} alt={tile.title} style={{width:'auto',maxHeight:'2em',maxWidth:'fit-content',height:'auto'}}/>
+                            <p style={{flex: '1 0 auto'}}>{tile.title}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+              ))}
+        </Section>
+
   </div>
 )
 

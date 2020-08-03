@@ -12,7 +12,7 @@ import 'animate.css/animate.css'
 
 const Entry = () => (
   <div >
-        <div style={{textAlign:'center',color:'white',display:'relative',height:'100%',padding:'5em'}}>    
+        <div style={{textAlign:'center',display:'relative',height:'100%',padding:'5em'}}>    
             <div>
               <h2>New York University</h2>
             </div>
