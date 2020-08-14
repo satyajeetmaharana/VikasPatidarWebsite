@@ -367,7 +367,7 @@ function Experience() {
           <li>Developed a web system to <b>automatically digitize forms</b> for clients (<b>US federal departments</b>), reducing form creation time by <b>70 times</b>.</li>
           <li>Implemented a <b>web tagging tool</b> to segment and annotate form entities from <b>2M form images</b> to build training dataset for neural networks.</li>
           <li>Lead the annotation process using the above platform by  training and <b>managing a team of 75</b>, while assuring annotation quality.</li>
-          <li>Engineered heuristics for augmenting the training dataset for rare patterns resulting in a <b>200\% increase</b> in the training dataset size, leading to an <b>8% increase</b> in the precision of the model. Also trained a specialized CNN for each form components with F1-scores above 90%.</li>
+          <li>Engineered heuristics for augmenting the training dataset for rare patterns resulting in a <b>200% increase</b> in the training dataset size, leading to an <b>8% increase</b> in the precision of the model. Also trained a specialized CNN for each form components with F1-scores above 90%.</li>
           <li>Exposed Tensorflow models as an <b>asynchronous microservice</b> using <b>RabbitMQ</b> and <b>WSGI</b>.</li>
           <li>Implemented a <b>microservice</b> to heuristically merge the output of the above neural networks to generate a hierarchical form structure.</li>
           </ul>
