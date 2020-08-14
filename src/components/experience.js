@@ -261,7 +261,6 @@ function Experience() {
   const [openIBMIntern, setOpenIBMIntern] = React.useState(false);
 
   const handleOpen = (name) => {
-    console.log(name)
     if(name === 'WORLDBANK'){
       setOpenWorldBank(true);
     }
@@ -277,7 +276,6 @@ function Experience() {
   };
 
   const handleClose = (name) => {
-    console.log(name)
     if(name === 'WORLDBANK'){
       setOpenWorldBank(false);
     }
