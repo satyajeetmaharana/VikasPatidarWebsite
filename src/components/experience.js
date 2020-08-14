@@ -208,6 +208,7 @@ const useStyles = makeStyles((theme) => ({
     width: '60%',
     height: 'auto',
     maxHeight:500,
+    overflow:'auto',
     backgroundColor: theme.palette.background.paper,
     border: '2px solid #000',
     boxShadow: theme.shadows[5],
