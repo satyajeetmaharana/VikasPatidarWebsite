@@ -1,0 +1,15 @@
+.prevNextButton{
+    background:none;
+    border:none;
+    outline:none;
+    font-size:2em;
+}
+
+.iconPrevNext{
+    color:black;
+}
+
+.iconPrevNext:focus,
+.iconPrevNext:hover{
+    color:#4078c0;
+}

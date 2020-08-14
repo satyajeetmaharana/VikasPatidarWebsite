@@ -29,6 +29,8 @@ import "../utils/layout.css"
 
 import "animate.css/animate.min.css";
 
+import CoverPicImg from "../images/coverpic.jpeg";
+
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -83,8 +85,9 @@ const Layout = ({ children }) => {
     <>
       <div style={{position:'relative'}}>
            <div>
-                <div style={{textAlign:'center',display:'relative',top:'0',paddingTop:'30em',height:'100%',paddingBottom:'40em'}}>    
+                <div style={{textAlign:'center',position:'sticky',display:'relative',top:'0',paddingTop:'20em',height:'100%',paddingBottom:'40em'}}>    
                     <Fade delay={500} duration={1000} left cascade>
+                      <img src={CoverPicImg} alt="Vikas Picture" style={{width:'auto',maxWidth:'fit-content',maxHeight:'20em',height:'auto',borderRadius:'50%'}}/>
                       <div  style={{fontSize:'4em',fontWeight:'500',textShadow: '2px 2px 4px #000000'}}>Vikas Patidar</div>
                     </Fade>
                     
@@ -97,6 +100,8 @@ const Layout = ({ children }) => {
                         </IconsDiv>
                       </Fade>
                     </IconContext.Provider>
+                </div>
+                <div style={{position:'fixed',zIndex:'-100',top:'0',left:'0'}}>
                   
                 </div>
           </div>

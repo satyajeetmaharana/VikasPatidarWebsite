@@ -205,7 +205,7 @@ function getModalStyle() {
 const useStyles = makeStyles((theme) => ({
   paper: {
     position: 'absolute',
-    width: 1000,
+    width: '60%',
     height: 'auto',
     maxHeight:500,
     backgroundColor: theme.palette.background.paper,
@@ -246,7 +246,6 @@ const ModalDiv = styled.div`
   }
   ${media.xs`
     width: 90%;
-
   `}
 `
 function Experience() {

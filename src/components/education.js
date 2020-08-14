@@ -203,7 +203,7 @@ function getModalStyle() {
 const useStyles = makeStyles((theme) => ({
   paper: {
     position: 'absolute',
-    width: 1000,
+    width: '60%',
     height: 'auto',
     maxHeight:500,
     backgroundColor: theme.palette.background.paper,
@@ -252,9 +252,8 @@ const ModalDiv = styled.div`
 function Education() {
 
   const classes = useStyles();
-  // getModalStyle is not a pure function, we roll the style only on the first render
+  
   const [modalStyle] = React.useState(getModalStyle);
-  const [open, setOpen] = React.useState(false);
   const [openNYU, setOpenNYU] = React.useState(false);
   const [openIIT, setOpenIIT] = React.useState(false);
 
@@ -300,7 +299,7 @@ function Education() {
     <div style={modalStyle} className={classes.paper}>
       <ModalDiv>
         {headingNYU}
-        <p id="simple-modal-description">
+          <p id="simple-modal-description">
           <ul>
           <li><b>GPA: </b>4.0/4.0</li>
           <li><b>Coursework: </b>Programming Languages, Operating Systems, Distributed Systems, Natural Language Processing, Computer Vision</li>

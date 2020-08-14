@@ -25,6 +25,19 @@ import GPUProjectLogo from "../images/gpu_project.jpg";
 import P2PProjectLogo from "../images/p2p_project.jpg"; 
 import TwitterProjectLogo from "../images/twitter_project.jpg"; 
 
+// import {
+//   BrowserRouter as Router,
+//   Switch,
+//   withRouter,
+//   Route,
+//   Link
+// } from "react-router-dom";
+
+import {Link } from "@reach/router";
+
+
+import Project from "../components/project"
+
 const Content = styled.div`
   & > a {
     visibility: hidden;
@@ -46,7 +59,6 @@ const Title = styled.h1`
   line-height: 40px;
   border: none;
   color: #292929;
-
   ${props =>
     props.small &&
     css`
@@ -61,17 +73,14 @@ const Section = styled.div`
   text-align: center;
   padding-top: 45px;
   padding-bottom: 40px;
-
   a {
     font-family: 'Lato';
   }
-
   p {
     margin-bottom: 64px;
     font-size: large;
     color: #666;
   }
-
   h1,
   h2,
   h3,
@@ -82,7 +91,6 @@ const Section = styled.div`
     text-transform: uppercase;
     color: #292929;
   }
-
   h4 {
     letter-spacing: 3px;
     font-weight: 400;
@@ -90,7 +98,6 @@ const Section = styled.div`
     line-height: 32px;
     color: #292929;
   }
-
   span {
     color: #666;
     opacity: 0.5;
@@ -102,7 +109,6 @@ const Section = styled.div`
   & > div:last-child {
     border-bottom: none !important;
   }
-
   ${props =>
     props.center &&
     css`
@@ -113,14 +119,12 @@ const Section = styled.div`
       h4 {
         margin-left: 20vw;
       }
-
       ${media.xs`
         & > div {
           margin-left: 3vw !important;
         }
     `}
     `}
-
   ${props =>
     props.dark &&
     css`
@@ -178,7 +182,6 @@ const Item = styled.div`
   }
   ${media.xs`
     width: 90%;
-
   `}
 `
 
@@ -231,7 +234,6 @@ const HoverImg = styled.div`
     // -moz-transition: opacity .2s ease-out;
     // -webkit-transition: opacity .2s ease-out;
     // -o-transition: opacity .2s ease-out;
-
     -webkit-transform: scale(1.05);
     -ms-transform: scale(1.05);
     transform: scale(1.05);
@@ -243,6 +245,7 @@ const projectsData = [
   {
     img:PrivacyProjectLogo,
     title:'Analyzing Privacy Statements through Syntactic and Semantic Role Labeling (SRL)',
+    url:'APPS',
     date:'Jan 2020 - June 2020',
     github:'https://github.com/Full-Stack-Typhoon/APPS'
   },
@@ -250,18 +253,21 @@ const projectsData = [
     img:GPUProjectLogo,
     title:'Parallelizing The Traveling Salesman Problem (TSP) on Multi-GPU system',
     date:'Sep 2019 – Dec 2019',
+    url:'Parallel-TSP',
     github:'https://github.com/Full-Stack-Typhoon/Parallel-TSP'
   },
   {
     img:P2PProjectLogo,
     title:'Hybrid Peer to Peer Network',
     date:'Aug 2018 - Dec 2018',
+    url:'Hybrid-P2P-Network',
     github:'https://github.com/Full-Stack-Typhoon/Hybrid-P2P-Network'
   },
   {
     img:TwitterProjectLogo,
     title:'Continuous Summarization of Evolving Tweet Streams',
     date:'Jan 2016 - May 2016',
+    url:'Improved-Sumblr',
     github:'https://github.com/Full-Stack-Typhoon/Improved-Sumblr'
   }
 ];
@@ -292,17 +298,16 @@ function Projects() {
                       {projectsData.map(project => (
                             <div>
                                 <Card style={{padding:'1em'}}>
-                                  <HoverImg>
-                                    <a>
-                                    <Image
-                                      src={project.img}
-                                      wrapped
-                                      ui={false}
-                                      alt={project.title}
-                                    />
-                                    </a>
-                                  </HoverImg>
-                                  
+                                  <Link to={`/project/${project.url}`}>
+                                    <HoverImg>
+                                        <Image
+                                          src={project.img}
+                                          wrapped
+                                          ui={false}
+                                          alt={project.title}
+                                        />
+                                    </HoverImg>      
+                                  </Link>                          
                                   <Card.Content>
                                     <Card.Header>
                                       {project.title}
@@ -329,6 +334,3 @@ function Projects() {
 
 
 export default Projects
-
-
-
