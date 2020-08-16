@@ -84,8 +84,8 @@ const Layout = ({ children }) => {
   return (
     <>
       <div style={{position:'relative'}}>
-           <div>
-                <div style={{textAlign:'center',position:'sticky',display:'relative',top:'0',paddingTop:'20em',height:'100%',paddingBottom:'40em'}}>    
+           <div style={{height:'100vh'}}>
+                <div style={{textAlign:'center',position:'sticky',display:'relative',top:'0',paddingTop:'20vh',paddingBottom:'10vh'}}>    
                     <Fade delay={500} duration={1000} left cascade>
                       <img src={CoverPicImg} alt="Vikas Picture" style={{width:'auto',maxWidth:'fit-content',maxHeight:'20em',height:'auto',borderRadius:'50%'}}/>
                       <div  style={{fontSize:'4em',fontWeight:'500',textShadow: '2px 2px 4px #000000'}}>Vikas Patidar</div>
