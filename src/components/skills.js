@@ -279,7 +279,7 @@ const Skills = () => (
                   <div style={{flex:'1',verticalAlign:'middle'}}>
                     <div style={{display:'flex',flexWrap:'wrap',width:'60%'}}>
                       {skill.items.map(tile => (
-                        <div style={{flex:'1',display:'flex',flexDirection:'column'}}>
+                        <div style={{flex:'1',display:'flex',flexDirection:'column',padding:'1em'}}>
                           <div style={{flex: '1 0 auto',textAlign:'center'}}>
                             <img src={tile.img} alt={tile.title} style={{width:'auto',maxHeight:'2em',maxWidth:'fit-content',height:'auto'}}/>
                             <p style={{flex: '1 0 auto'}}>{tile.title}</p>
