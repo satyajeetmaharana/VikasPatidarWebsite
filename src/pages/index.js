@@ -18,7 +18,6 @@ const IndexPage = () => (
   <div>
     <SEO title="Home" />
     <Router>
-        
         <Layout path="/"/>
         <Project path="/project/:projectURL"/>
         {/* <Route exact path="/about" component={AboutPage} /> */}

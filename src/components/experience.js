@@ -259,6 +259,7 @@ function Experience() {
   const [openAdobeIntern, setOpenAdobeIntern] = React.useState(false);
   const [openAdobeFTE, setOpenAdobeFTE] = React.useState(false);
   const [openIBMIntern, setOpenIBMIntern] = React.useState(false);
+  const [openSigmoidIntern, setOpenSigmoidIntern] = React.useState(false);
 
   const handleOpen = (name) => {
     if(name === 'WORLDBANK'){
@@ -272,6 +273,9 @@ function Experience() {
     }
     if(name === 'IBMINTERN'){
       setOpenIBMIntern(true);
+    }
+    if(name === 'SIGMOIDINTERN'){
+      setOpenSigmoidIntern(true);
     }
   };
 
@@ -288,6 +292,9 @@ function Experience() {
     if(name === 'IBMINTERN'){
       setOpenIBMIntern(false);
     }
+    if(name === 'SIGMOIDINTERN'){
+      setOpenSigmoidIntern(false);
+    }
   };
 
 
@@ -295,7 +302,7 @@ function Experience() {
     <div>
         <span>JUNE 2020 – CURRENT</span>
         <h5>WORLD BANK</h5>
-        <p>Software Engineering Intern</p>
+        <p>Research Intern</p>
     </div>
   );
 
@@ -303,7 +310,7 @@ function Experience() {
     <div>
         <span>JUNE 2019 - AUG 2019</span>
         <h5>ADOBE</h5>
-        <p>Software Engineering Intern</p>
+        <p>Research Intern</p>
     </div>
   );
 
@@ -312,7 +319,7 @@ function Experience() {
     <div>
         <span>JULY 2016 - AUG 2018</span>
         <h5>ADOBE</h5>
-        <p>Senior Software Engineer</p>
+        <p>Senior Member of Technical Staff</p>
     </div>
   );
 
@@ -321,6 +328,14 @@ function Experience() {
         <span>MAY 2015 - JULY 2015</span>
         <h5>IBM</h5>
         <p>Software Engineering Intern</p>
+    </div>
+  );
+
+  const headingSigmoidIntern = (
+    <div>
+        <span>MAY 2014 - JULY 2014</span>
+        <h5>Sigmoid Analytics</h5>
+        <p>Data Science Intern</p>
     </div>
   );
 
@@ -388,6 +403,21 @@ function Experience() {
       </ModalDiv>
     </div>
   );
+
+  const bodySigmoidIntern = (
+    <div style={modalStyle} className={classes.paper}>
+      <ModalDiv>
+        {headingSigmoidIntern}
+        <p id="simple-modal-description">
+          <ul>
+          <li>Developed an end-to-end web application for exploring music and movies based on popularity and ratings.</li>
+          <li>Developed a <b>recommendation system</b> on more than 100 million records with a processing time of under 2 seconds using Apache Spark.</li>
+          <li>Implemented distributed <b>Apriori Algorithm</b> module for Association Rule Mining in <b>Scala</b>.</li>
+          </ul>
+        </p>
+      </ModalDiv>
+    </div>
+  );
   
   return (
     <div>
@@ -406,8 +436,10 @@ function Experience() {
         <Item onClick={() => handleOpen('IBMINTERN')}>
             {headingIBMIntern}
         </Item>
+        <Item onClick={() => handleOpen('SIGMOIDINTERN')}>
+            {headingSigmoidIntern}
+        </Item>
       </Section>
-
       <div>
         <Modal
           open={openWorldBank}
@@ -443,6 +475,15 @@ function Experience() {
           aria-describedby="simple-modal-description"
         >
           {bodyIBMIntern}
+        </Modal>
+
+        <Modal
+          open={openSigmoidIntern}
+          onClose={() => handleClose('SIGMOIDINTERN')}
+          aria-labelledby="simple-modal-title"
+          aria-describedby="simple-modal-description"
+        >
+          {bodySigmoidIntern}
         </Modal>
       </div>
     </div>

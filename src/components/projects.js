@@ -24,6 +24,9 @@ import PrivacyProjectLogo from "../images/privacy_project.jpg";
 import GPUProjectLogo from "../images/gpu_project.jpg"; 
 import P2PProjectLogo from "../images/p2p_project.jpg"; 
 import TwitterProjectLogo from "../images/twitter_project.jpg"; 
+import SelfDrivingProjectLogo from "../images/self_driving.png";
+import BERTProjectLogo from "../images/BERT.png";
+import TwitterCricketProjectLogo from "../images/TwitterCricket.png"
 
 // import {
 //   BrowserRouter as Router,
@@ -286,7 +289,68 @@ const projectsData = [
       {heading: '',text:<div><ul><li>Implemented an online distributed algorithm for generating summaries of related tweets cluster created using k-means algorithm.</li><li>Outperformed existing algorithms in speed by 8 times and accuracy by 10.8%.</li><li>Technologies: Python, scikit-learn, Tweepy, Flask, MongoDB, NLTK.</li></ul></div>},
       {heading: 'Overview',text:<div><ul><li>Continuous Tweet Summarization.</li><li>Continuously monitor “Apple”-related tweets arriving from the stream and produce a continuous timeline which grows by time.</li><li>The range timeline during a period giving topic evolution in those weeks.</li><li> Drill down summary or Roll up summary</li></ul></div>}
     ]
+  },
+  {
+    img:SelfDrivingProjectLogo,
+    title:'Prediction and Policy-learning Under Uncertainty (Self Driving Cars)',
+    date:'Jun 2020 – Present',
+    url:'policy-learning-self-driving',
+    github:'',
+    description: [
+      {heading: 'Overview',text:<div><ul><li>Training a self-driving agent to plan its own trajectory in highly dense traffic using a dedicated cost term for uncertainty regularization.</li><li>The agent is simulated over a set of episodes with thecurrent success rateof car surviving the next 3 seconds being <b>82%</b>.</li><li>Currently working on clustering/classifying the episodes based on different criteria like cost, difficulty etc. for failed cases(the agent crashes or goes off-road), using a visualization tool in order to improve the agent policy.</li></ul></div>}
+    ]
+  },
+  {
+    img:BERTProjectLogo,
+    title:'Evaluating Semantic consistencies of BERT for Targeted Aspect Based Sentiment Analysis (TABSA)',
+    date:'Feb 2020 - June 2020',
+    url:'BERT-Semantic-Inconsistenices',
+    github:'https://github.com/Full-Stack-Typhoon/BERT-Semantic-Inconsistenices',
+    description: [
+      {heading:'Abstract',text:<div>Transformers like BERT (Devlin et al., 2018), RoBERTa (Liu et al., 2019) have been fine-tuned for supervised tasks with state of the art results. In this paper, we analyze if providing more contextual information leads to better accuracy in BERT fine-tuned sentence-pair classification models for the targeted aspect based sentiment analysis task (TABSA) (Sunet al., 2019). Our results on the Senti-Hood and SemEval 2014 Task-4 datasets show that the BERT fine-tuned models do not perform consistently with increase in context size and have a range of up to 6% and 3% in F1 accuracy variations respectively. Further, our analysis shows severe inconsistencies with more than 25% of test samples predictions getting inverted with increase in context size. This work is submitted in EMNLP 2020.</div>},
+      {heading: 'Overview',text:<div><ul><li>Evaluated BERT fine-tuned sentence-pair classification models for the TABSA task for different context sizes around the target</li><li>Found that the BERT fine-tuned modelsdo not perform consistently with increase in context size and had a drop of 6% in Aspect F1 scores on the Senti-Hood dataset.</li><li>Our analysis showed severe inconsistencies with more than 25% of test samples predictions getting inverted with increase in context size.</li><li>Indicates the need of regularization to avoid inconsistencies while fine-tuning a large pre-trained language model on a small dataset.</li></ul></div>}
+    ]
+  },
+  {
+    img:SelfDrivingProjectLogo,
+    title:'Generating Bird’s-Eye View from Multi-View Scenes for Self-Driving Cars',
+    date:'Feb 2020 - May 2020',
+    url:'Autonomous-Driving',
+    github:'https://github.com/Full-Stack-Typhoon/Autonomous-Driving',
+    description: [
+      {heading:'Abstract',text:<div>This work talks about an easy and effective approach to address a very challenging and interesting task of road layout estimation in complex driving environment. From six camera images encompassing the whole 360° view, we try to predict the bird’s-eye-view of the road and surrounding objects of the ego car. We present an effective generic approach to handle both the tasks by reducing each of them to an Instance segmentation problem. Further by leveraging the unlabeled dataset and data augmentation techniques, we estimate depth in an unsupervised manner. Finally using pretrained depth and novel architectures, we accurately generate bird’s-eye-view of a scene.</div>},
+      {heading: 'Overview',text:
+        <div>
+          <ul>
+            <li>Generated bird's-eye view of the road layout, vehicles and pedestrians from 6 cameras mounted on a car encompassing a 360-degree view.</li>
+            <li>Reduced the tasks to <b>Instance Segmentation</b> problems and solved them by creating a novel DL architecture with custom loss functions.</li>
+            <li>Added <b>Monodepth</b> features using Self-supervised learning by leveraging the temporal aspect of the large number of unlabeled videos.</li>
+            <li>Achieved an <b>improvement in IOU of 13</b> over the baseline model for the road layout generation task on the Lyft dataset.</li>
+          </ul>
+        </div>}
+    ]
+  },
+  {
+    img:TwitterCricketProjectLogo,
+    title:'Twitter Cricket Tracker and Automatic Highlight Generator from Textual Commentary',
+    date:'Aug 2014 - Nov 2014',
+    url:'Sentiment-Analysis-Cricket-Tweets',
+    github:'https://github.com/Full-Stack-Typhoon/Sentiment-Analysis-Cricket-Tweets',
+    description: [
+      {heading:'Abstract',text:<div>Popularity and Qualitative Performance tracker of players and teams over time using sentiment analysis of tweets</div>},
+      {heading: 'Overview',text:
+        <div>
+          Created a popularity and qualitative performance tracker of players and teams over time from over 2 million tweets with relevant hashtags. Programmed an automatic highlight generator from textual commentary crawled and scraped from cricket websites. Engineered features using handmade dictionaries and created classification models for computing sentiment and generating highlights. Best project award for the Natural Language Processing course funded by Yahoo.
+          <ul>
+            <li>Created a <b>popularity and qualitative performance tracker</b> of players and teams over time from over <b>2 million</b> filtered tweets.</li>
+            <li>Programmed an <b>automatic highlight generator</b> from textual commentary, crawled and scraped from cricket websites.</li>
+            <li><b>Engineered features</b> using handmade dictionaries and created classification models for computing sentiment and generating highlights.</li>
+            <li><b>Best project award</b> for the Natural Language Processing course sponsored by <b>Yahoo</b>.</li>
+          </ul>
+        </div>}
+    ]
   }
+
 ];
 
 // ReactModal.setAppElement('#main')
